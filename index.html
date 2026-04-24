@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Planner Catalog Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-inner">
+            <p class="eyebrow">Digital Product Catalog</p>
+            <h1>Digital Planner Catalog Dashboard</h1>
+            <p class="hero-text">
+                Browser-based catalog for organizing, presenting, and reviewing planner templates across budgeting, wellness, productivity, education, travel, and event planning workflows.
+            </p>
+            <div class="hero-actions">
+                <button onclick="scrollToSection('overview')">View Overview</button>
+                <button onclick="scrollToSection('catalog')">View Catalog</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-shell">
+        <section class="panel" id="overview">
+            <h2>Catalog Overview</h2>
+            <div class="summary-grid" id="summaryGrid"></div>
+        </section>
+
+        <section class="panel" id="categories">
+            <h2>Template Categories</h2>
+            <div class="card-grid" id="categoryGrid"></div>
+        </section>
+
+        <section class="panel" id="catalog">
+            <div class="catalog-header">
+                <h2>Planner Catalog</h2>
+                <div class="filter-wrap">
+                    <label for="categoryFilter">Filter By Category</label>
+                    <select id="categoryFilter">
+                        <option value="All">All</option>
+                    </select>
+                </div>
+            </div>
+            <div class="catalog-grid" id="catalogGrid"></div>
+        </section>
+
+        <section class="panel" id="use-cases">
+            <h2>Business Use Cases</h2>
+            <div class="card-grid" id="useCaseGrid"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Digital Planner Catalog Dashboard • Portfolio Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

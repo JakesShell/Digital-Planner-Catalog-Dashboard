@@ -1,19 +1,56 @@
-# PlannerCollection
-
-# Planning Templates Repository
+﻿# Digital Planner Catalog Dashboard
 
 ## Overview
 
-Welcome to the **Planning Templates Repository**! This collection features a variety of planners designed to help individuals organize different aspects of their lives. Whether you're managing finances, planning fitness routines, setting goals, or organizing events, these templates provide structured approaches to enhance your planning process.
+Digital Planner Catalog Dashboard is a browser-based catalog and product presentation dashboard for organizing and reviewing a collection of planner templates.
 
-## Planners Included
+This project is positioned as a recruiter-ready frontend portfolio piece. It upgrades a folder of planner PDFs into a cleaner and more useful dashboard that presents categories, product intent, and quick-access links in a more structured business-facing format.
 
-- **Budget Planner**: Track your income, expenses, and savings to achieve your financial goals.
-- **Fitness Planner**: Organize your workout routines, track progress, and set fitness goals.
-- **Goal Planner**: Define your short-term and long-term goals and outline actionable steps to achieve them.
-- **Household Planner**: Manage household tasks, chores, and schedules effectively.
-- **Mental Health Planner**: Reflect on your feelings, track moods, and set self-care goals.
-- **Social Media Planner**: Plan and schedule your social media content and track engagement.
-- **Student Planner**: Organize assignments, study schedules, and important deadlines.
-- **Travel Planner**: Plan itineraries, budgets, and packing lists for your trips.
-- **Wedding Planner**: Organize all aspects of wedding planning, from budgets to guest lists.
+## Real-World Business Use Case
+
+This project maps to practical workflows used by:
+
+- Digital Product Sellers
+- Ecommerce Template Shops
+- Internal Product Catalog Reviews
+- Marketing And Merchandising Teams
+- Frontend Developers Building Internal Catalog Tools
+
+A team may need to answer questions such as:
+
+- Which planner products are available in the catalog?
+- How are the products grouped by category?
+- What is the intended use case of each planner?
+- How can a static collection of PDFs be presented more professionally?
+
+This dashboard is useful for product presentation, internal catalog organization, and portfolio demonstration of turning a static asset collection into a working catalog interface.
+
+## Key Features
+
+- Catalog Overview Cards
+- Category Breakdown
+- Filterable Planner Catalog
+- Quick PDF Access
+- Business Use Case Section
+- Responsive Browser-Based UI
+
+## Tech Stack
+
+- HTML
+- CSS
+- JavaScript
+
+## Repository Contents
+
+- `index.html`
+- `styles.css`
+- `script.js`
+- `README.md`
+- Planner PDF assets
+
+## How To Run
+
+Open the dashboard in a browser.
+
+```powershell
+Start-Process .\index.html
