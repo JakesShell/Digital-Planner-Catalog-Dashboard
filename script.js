@@ -1,4 +1,4 @@
-﻿const planners = [
+const planners = [
     {
         title: "Budget Planner Template",
         category: "Finance",

@@ -1,0 +1,26 @@
+{
+  "name": "productatlas-digital-catalog-launch-operations-dashboard",
+  "version": "1.0.0",
+  "description": "ProductAtlas is a digital product catalog and launch operations dashboard for planner/template businesses.",
+  "main": "app.js",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5173",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4173",
+    "check": "node --check app.js"
+  },
+  "keywords": [
+    "digital-products",
+    "etsy",
+    "dashboard",
+    "product-management",
+    "launch-operations",
+    "seo",
+    "portfolio-project"
+  ],
+  "author": "JakesShell",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}

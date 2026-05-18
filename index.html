@@ -1,60 +1,153 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Planner Catalog Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProductAtlas Digital Catalog & Launch Operations Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="hero">
-        <div class="hero-inner">
-            <p class="eyebrow">Digital Product Catalog</p>
-            <h1>Digital Planner Catalog Dashboard</h1>
-            <p class="hero-text">
-                Browser-based catalog for organizing, presenting, and reviewing planner templates across budgeting, wellness, productivity, education, travel, and event planning workflows.
-            </p>
-            <div class="hero-actions">
-                <button onclick="scrollToSection('overview')">View Overview</button>
-                <button onclick="scrollToSection('catalog')">View Catalog</button>
-            </div>
+  <main class="app-shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Digital Product Operations Console</p>
+        <h1>ProductAtlas</h1>
+        <p>
+          Manage planner and template products from idea to launch, score SEO readiness,
+          track mockup and marketing gaps, and forecast catalog revenue.
+        </p>
+        <div class="hero-actions">
+          <button id="exportReportBtn" class="primary-btn">Export Catalog Report</button>
+          <button id="showReadyBtn" class="secondary-btn">Show Ready To Launch</button>
         </div>
-    </header>
+      </div>
 
-    <main class="page-shell">
-        <section class="panel" id="overview">
-            <h2>Catalog Overview</h2>
-            <div class="summary-grid" id="summaryGrid"></div>
-        </section>
+      <aside class="readiness-card">
+        <span>Catalog Readiness</span>
+        <strong id="catalogReadiness">--%</strong>
+        <p id="catalogSummary">Loading catalog intelligence...</p>
+      </aside>
+    </section>
 
-        <section class="panel" id="categories">
-            <h2>Template Categories</h2>
-            <div class="card-grid" id="categoryGrid"></div>
-        </section>
+    <section class="kpi-grid">
+      <article>
+        <span>Total Products</span>
+        <strong id="totalProducts">0</strong>
+      </article>
+      <article>
+        <span>Ready To List</span>
+        <strong id="readyProducts">0</strong>
+      </article>
+      <article>
+        <span>Needs SEO</span>
+        <strong id="needsSeo">0</strong>
+      </article>
+      <article>
+        <span>Monthly Revenue Forecast</span>
+        <strong id="monthlyRevenue">$0</strong>
+      </article>
+    </section>
 
-        <section class="panel" id="catalog">
-            <div class="catalog-header">
-                <h2>Planner Catalog</h2>
-                <div class="filter-wrap">
-                    <label for="categoryFilter">Filter By Category</label>
-                    <select id="categoryFilter">
-                        <option value="All">All</option>
-                    </select>
-                </div>
-            </div>
-            <div class="catalog-grid" id="catalogGrid"></div>
-        </section>
+    <section class="workspace">
+      <aside class="control-panel panel">
+        <p class="eyebrow">Catalog Controls</p>
+        <h2>Filter product pipeline</h2>
 
-        <section class="panel" id="use-cases">
-            <h2>Business Use Cases</h2>
-            <div class="card-grid" id="useCaseGrid"></div>
-        </section>
-    </main>
+        <label for="searchInput">Search</label>
+        <input id="searchInput" type="search" placeholder="Search products, keywords, categories">
 
-    <footer class="footer">
-        <p>Digital Planner Catalog Dashboard • Portfolio Project</p>
-    </footer>
+        <label for="statusFilter">Status</label>
+        <select id="statusFilter">
+          <option value="all">All statuses</option>
+        </select>
 
-    <script src="script.js"></script>
+        <label for="categoryFilter">Category</label>
+        <select id="categoryFilter">
+          <option value="all">All categories</option>
+        </select>
+
+        <label for="sortFilter">Sort</label>
+        <select id="sortFilter">
+          <option value="readiness-desc">Launch readiness: high to low</option>
+          <option value="readiness-asc">Launch readiness: low to high</option>
+          <option value="revenue-desc">Revenue forecast: high to low</option>
+          <option value="seo-asc">SEO score: low to high</option>
+          <option value="date-asc">Launch date: earliest first</option>
+        </select>
+
+        <button id="resetFiltersBtn" class="secondary-wide">Reset Filters</button>
+      </aside>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Product Catalog</p>
+            <h2>Launch-ready product inventory</h2>
+          </div>
+          <span id="resultCount" class="count-pill">0 products</span>
+        </div>
+
+        <div id="productGrid" class="product-grid"></div>
+      </section>
+    </section>
+
+    <section class="insight-grid">
+      <section class="panel">
+        <p class="eyebrow">Launch Pipeline</p>
+        <h2>Status distribution</h2>
+        <div id="pipelineList" class="pipeline-list"></div>
+      </section>
+
+      <section class="panel">
+        <p class="eyebrow">SEO Operations</p>
+        <h2>Listing readiness gaps</h2>
+        <div id="seoGaps" class="gap-list"></div>
+      </section>
+    </section>
+
+    <section class="insight-grid">
+      <section class="panel">
+        <p class="eyebrow">Revenue Forecast</p>
+        <h2>Monthly catalog estimate</h2>
+        <div id="revenueCards" class="revenue-grid"></div>
+      </section>
+
+      <section class="panel">
+        <p class="eyebrow">Bundle Builder</p>
+        <h2>Recommended product bundles</h2>
+        <div id="bundleList" class="bundle-list"></div>
+      </section>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">Launch Operations</p>
+          <h2>Marketing and production checklist</h2>
+        </div>
+        <span class="count-pill">Founder dashboard</span>
+      </div>
+      <div id="taskBoard" class="task-board"></div>
+    </section>
+
+    <section class="bottom-cta">
+      <div>
+        <p class="eyebrow">Operational Next Step</p>
+        <h2>Turn product ideas into a launchable digital catalog.</h2>
+        <p>
+          ProductAtlas shows how a real digital product studio can manage listings,
+          SEO, mockups, bundles, launch dates, and revenue planning from one focused dashboard.
+        </p>
+      </div>
+      <button id="scrollTopBtn" class="primary-btn">Back To Top</button>
+    </section>
+  </main>
+
+  <dialog id="productDialog" class="product-dialog">
+    <div id="dialogContent"></div>
+    <button id="closeDialogBtn" class="secondary-wide">Close</button>
+  </dialog>
+
+  <script src="app.js"></script>
 </body>
 </html>
