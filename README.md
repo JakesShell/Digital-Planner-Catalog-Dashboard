@@ -70,7 +70,7 @@ ProductAtlas brings those workflows into one dashboard so a founder or operation
 ## Run Locally
 
 ```powershell
-cd "C:\github-audit\Digital-Planner-Catalog-Dashboard"
+cd "C:\github-audit\ProductAtlas-Digital-Catalog-And-Launch-Operations-Dashboard"
 
 npm install
 npm run dev
@@ -109,4 +109,5 @@ ProductAtlas demonstrates product operations thinking, business dashboard design
 ## Final Project Name
 
 ProductAtlas Digital Catalog & Launch Operations Dashboard
+
 
